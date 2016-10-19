@@ -16,7 +16,7 @@ public class Ejercicio5 {
 			aux = numScan.nextInt();
 			if (numero < aux) numero = aux;		//Comparo y almaceno el mayor
 			System.out.println("¿Quieres introducir más números?");
-			letra = letraScan.next();
+			letra = letraScan.nextLine();
 		} while (letra.equals("s"));
 
 		System.out.println("El mayor de los números introducidos es el "
