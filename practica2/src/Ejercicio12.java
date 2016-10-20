@@ -22,55 +22,47 @@ public class Ejercicio12 {
 			case 1:
 
 				System.out.print("\n\nIntroduce el primer operando: ");
-				;
 				a = teclado.nextInt();
 				System.out.print("\nIntroduce el segundo operando: ");
-				;
 				b = teclado.nextInt();
 
-				System.out.println("Resultado: " + (a + b)+"\n");
+				System.out.println("Resultado: " + (a + b) + "\n");
 
 				break;
 			case 2:
 
 				System.out.print("\n\nIntroduce el primer operando: ");
-				;
 				a = teclado.nextInt();
 				System.out.print("\nIntroduce el segundo operando: ");
-				;
 				b = teclado.nextInt();
 
-				System.out.println("Resultado: " + (a - b)+"\n");
+				System.out.println("Resultado: " + (a - b) + "\n");
 
 				break;
 			case 3:
 
 				System.out.print("\n\nIntroduce el primer operando: ");
-				;
 				a = teclado.nextInt();
 				System.out.print("\nIntroduce el segundo operando: ");
-				;
 				b = teclado.nextInt();
 
-				System.out.println("Resultado: " + (a * b)+"\n");
+				System.out.println("Resultado: " + (a * b) + "\n");
 				break;
 			case 4:
 
 				System.out.print("\n\nIntroduce el primer operando: ");
-				;
 				a = teclado.nextInt();
 				System.out.print("\nIntroduce el segundo operando: ");
-				;
 				b = teclado.nextInt();
 
-				System.out.println("Resultado: " + (a / b)+"\n");
+				System.out.println("Resultado: " + (a / b) + "\n");
 
 				break;
 			case 5:
 				return;
 
 			default:
-				System.out.println("Opción inválida."+"\n");
+				System.out.println("Opción inválida." + "\n");
 				break;
 			}
 		}
