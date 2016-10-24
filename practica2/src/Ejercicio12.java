@@ -1,71 +1,49 @@
 import java.util.Scanner;
 
 public class Ejercicio12 {
+
 	public static void main(String[] args) {
-		Scanner teclado = new Scanner(System.in);
-		int opcion;
-		int a;
-		int b;
 
-		while (true) {
-			System.out.println("¿Qué quieres hacer?\n");
-			System.out.println("1.Sumar.");
-			System.out.println("2.Restar.");
-			System.out.println("3.Multiplicar.");
-			System.out.println("4.Dividir.");
-			System.out.println("5.Salir del programa.");
+		double a;
+		double b;
+		double c;
+		Scanner tecladoNum = new Scanner(System.in);
 
-			opcion = teclado.nextInt();
+		Scanner tecladoLetra = new Scanner(System.in);
+		char letra = 's';
 
-			switch (opcion) {
+		while (letra == 's') {
+			System.out.print("Introduce el lado 'a' del triángulo: ");
+			a = tecladoNum.nextDouble();
+			System.out.print("Introduce el lado 'b' del triángulo: ");
+			b = tecladoNum.nextDouble();
+			System.out.print("Introduce el lado 'c' del triángulo: ");
+			c = tecladoNum.nextDouble();
 
-			case 1:
-
-				System.out.print("\n\nIntroduce el primer operando: ");
-				a = teclado.nextInt();
-				System.out.print("\nIntroduce el segundo operando: ");
-				b = teclado.nextInt();
-
-				System.out.println("Resultado: " + (a + b) + "\n");
-
-				break;
-			case 2:
-
-				System.out.print("\n\nIntroduce el primer operando: ");
-				a = teclado.nextInt();
-				System.out.print("\nIntroduce el segundo operando: ");
-				b = teclado.nextInt();
-
-				System.out.println("Resultado: " + (a - b) + "\n");
-
-				break;
-			case 3:
-
-				System.out.print("\n\nIntroduce el primer operando: ");
-				a = teclado.nextInt();
-				System.out.print("\nIntroduce el segundo operando: ");
-				b = teclado.nextInt();
-
-				System.out.println("Resultado: " + (a * b) + "\n");
-				break;
-			case 4:
-
-				System.out.print("\n\nIntroduce el primer operando: ");
-				a = teclado.nextInt();
-				System.out.print("\nIntroduce el segundo operando: ");
-				b = teclado.nextInt();
-
-				System.out.println("Resultado: " + (a / b) + "\n");
-
-				break;
-			case 5:
-				return;
-
-			default:
-				System.out.println("Opción inválida." + "\n");
-				break;
+			if (!((a + b > c) && (a + c > b) && (b + c > a))) {
+				System.out.println("ERROR: No es posible "
+						+ "construir un triángulo con esas medidas.");
+				System.out.print("¿Quieres volver a intentarlo?(s/n) ");
+				letra=tecladoLetra.next().charAt(0);
+				continue;
 			}
-		}
 
+			if (a == b || a == c || b == c) {
+				if (a == b && a == c) {
+					System.out.println("Es un triángulo rectángulo.");
+					System.out.print("¿Quieres volver a intentarlo?(s/n) ");
+					letra=tecladoLetra.next().charAt(0);
+					continue;
+				}
+				System.out.println("Es un triángulo isósceles.");
+				System.out.print("¿Quieres volver a intentarlo?(s/n) ");
+				letra=tecladoLetra.next().charAt(0);
+				continue;
+			}
+			System.out.println("Es un triángulo escaleno.");
+			System.out.print("¿Quieres volver a intentarlo?(s/n) ");
+			letra=tecladoLetra.next().charAt(0);
+		}
 	}
+
 }

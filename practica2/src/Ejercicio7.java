@@ -1,22 +1,25 @@
+import java.util.Scanner;
+
 public class Ejercicio7 {
 
 	public static void main(String[] args) {
 
-		String cadena = "";
-		int multiplo = 0;
-		int contador = 1;
+		double numero;
+		int decimales;
+		Scanner teclado = new Scanner(System.in);
 
-		multiplo = 3 * contador;
-		cadena += multiplo;
-		contador++;
-		multiplo = 3 * contador;
-
-		while (multiplo <= 3000) {
-			cadena += (", " + multiplo);
-			contador++;
-			multiplo = 3 * contador;
+		System.out.print("Introduzca un número con decimales (introduzca 0 para salir): ");
+		numero = teclado.nextDouble();
+		while (numero != 0) {
+			System.out.print("¿A cuántos decimales se debe redondear? ");
+			decimales = teclado.nextInt();
+			numero = Math.rint(numero * (Math.pow(10, decimales)))
+					/ Math.pow(10, decimales);
+			System.out.println("El número redondeado es " + numero);
+			System.out.print("Introduzca un número con decimales (introduzca 0 para salir): ");
+			numero = teclado.nextDouble();
+			
 		}
-		System.out.println(cadena);
 	}
 
 }

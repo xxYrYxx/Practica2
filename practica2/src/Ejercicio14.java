@@ -3,25 +3,25 @@ import java.util.Scanner;
 public class Ejercicio14 {
 
 	public static void main(String[] args) {
-		int num1;
-		int num2;
+		int termino;
+		int n0 = 0;			//termino 0
+		int n1 = 1;			//termino 1
 		Scanner teclado = new Scanner(System.in);
 
 		do {
-			System.out.print("Introduce el primer número (límite menor): ");
-			num1 = teclado.nextInt();
-			System.out.print("Introduce el segundo número (límite mayor): ");
-			num2 = teclado.nextInt();
-			if (!(num1 > 1 && num1 < num2)) {
-				System.out.println("ERROR: No son números válidos.");
-			}
-		} while (num1 > 1 && num1 < num2);
-
-		for (int i = num1; i < num2; i++) {
-			for (int j = 2; j < num1; j++) {
-				
-			}
+			System.out.print("Introduce el término a calcular: ");
+			termino = teclado.nextInt();
+		} while (termino < 0);
+		
+		if(termino<2){
+			n1=termino;
 		}
+
+		for (int i = 2; i < termino + 1; i++) {
+			n1 += n0;
+			n0 = n1 - n0;
+		}
+		System.out.println("El término " + termino + " es " + n1);
 	}
 
 }

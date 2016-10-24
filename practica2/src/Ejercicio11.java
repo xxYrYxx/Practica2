@@ -1,51 +1,71 @@
 import java.util.Scanner;
 
-
 public class Ejercicio11 {
-
 	public static void main(String[] args) {
-		
-		Scanner teclado=new Scanner(System.in);
-		
-		double a;
-		double b;
-		double c;
-		
-		double x1;
-		double x2;
-		
-		System.out.print("Introduce a: ");
-		a=teclado.nextDouble();
-		
-		System.out.print("Introduce b: ");
-		b=teclado.nextDouble();
-		
-		System.out.print("Introduce c: ");
-		c=teclado.nextDouble();
-		
-		if(a==0){
-			if(b==0){
-				System.out.println("Ecuación degenerada");
+		Scanner teclado = new Scanner(System.in);
+		int opcion;
+		int a;
+		int b;
+
+		while (true) {
+			System.out.println("¿Qué quieres hacer?\n");
+			System.out.println("1.Sumar.");
+			System.out.println("2.Restar.");
+			System.out.println("3.Multiplicar.");
+			System.out.println("4.Dividir.");
+			System.out.println("5.Salir del programa.");
+
+			opcion = teclado.nextInt();
+
+			switch (opcion) {
+
+			case 1:
+
+				System.out.print("\n\nIntroduce el primer operando: ");
+				a = teclado.nextInt();
+				System.out.print("\nIntroduce el segundo operando: ");
+				b = teclado.nextInt();
+
+				System.out.println("Resultado: " + (a + b) + "\n");
+
+				break;
+			case 2:
+
+				System.out.print("\n\nIntroduce el primer operando: ");
+				a = teclado.nextInt();
+				System.out.print("\nIntroduce el segundo operando: ");
+				b = teclado.nextInt();
+
+				System.out.println("Resultado: " + (a - b) + "\n");
+
+				break;
+			case 3:
+
+				System.out.print("\n\nIntroduce el primer operando: ");
+				a = teclado.nextInt();
+				System.out.print("\nIntroduce el segundo operando: ");
+				b = teclado.nextInt();
+
+				System.out.println("Resultado: " + (a * b) + "\n");
+				break;
+			case 4:
+
+				System.out.print("\n\nIntroduce el primer operando: ");
+				a = teclado.nextInt();
+				System.out.print("\nIntroduce el segundo operando: ");
+				b = teclado.nextInt();
+
+				System.out.println("Resultado: " + (a / b) + "\n");
+
+				break;
+			case 5:
 				return;
+
+			default:
+				System.out.println("Opción inválida." + "\n");
+				break;
 			}
-			System.out.print("Raíz única: "+(-c/b));
-			return;
 		}
-		double d=Math.pow(b, 2)-4*a*c;
-		if(d<0){
-			System.out.println("x1: x + yi");
-			System.out.println("x2: x - yi");
-			return;
-		}
-		
-		x1=(-b+Math.sqrt(d))/(2*a);
-		x2=(-b-Math.sqrt(d))/(2*a);
-		
-		System.out.println("x1: "+x1);
-		System.out.println("x2: "+x2);
-		
-		
 
 	}
-
 }

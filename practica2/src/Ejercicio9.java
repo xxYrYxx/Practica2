@@ -1,38 +1,25 @@
 import java.util.Scanner;
 
-
 public class Ejercicio9 {
 
 	public static void main(String[] args) {
-		
-		int longLado;
-		Scanner teclado=new Scanner(System.in);
-		
-		System.out.print("¿Qué longitud tendrán los lados del cuadrado? ");
-		longLado=teclado.nextInt();
-		
-		//primera fila
-		System.out.print("*");
-		for (int i = 0; i < longLado-1; i++) {
-			System.out.print("   *");
-		}
-		
-		//filas intermedias
-		for (int i = 0; i < longLado-2; i++) {
-			System.out.print("\n\n*");
-			for (int j = 0; j < longLado-2; j++) {
-				System.out.print("    ");
-			}
-			System.out.print("   *");
-		}
-		
-		//última fila
-		System.out.print("\n\n*");
-		for (int i = 0; i < longLado-1; i++) {
-			System.out.print("   *");
-		}
-		
 
+		Scanner teclado = new Scanner(System.in);
+		int numero;
+		int factorial;
+
+		System.out.print("Introduzca un número entero positivo: ");
+		numero = teclado.nextInt();
+
+		if (numero < 0)
+			System.out.println("Debe ser un entero positivo...");
+		else {
+			factorial=numero;
+			for (int i = numero-1; i > 0; i--) {
+				factorial *= i;
+			}
+			System.out.println("Su factorial es " + factorial);
+		}
 	}
 
 }
